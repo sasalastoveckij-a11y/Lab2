@@ -25,7 +25,7 @@ public class CinemaBookingSystem
 
     public bool SitIsBooked(uint sitNumber) => _bookedSits.Contains(sitNumber);
 
-    public void CancelBook(uint sitNumber) 
+    public void CancelBooking(uint sitNumber) 
     {
         if(!SitIsBooked(sitNumber))
             throw new InvalidOperationException($"Sit {sitNumber} is not booked");
