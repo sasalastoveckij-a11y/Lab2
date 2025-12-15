@@ -34,6 +34,7 @@ public class CinemaBookingSystemTests
     [Fact]
     public void CnacelBook_BookedSit_DecreasesBookedSitsCount()
     {
+        _cinema.BookSit(3);
         var initialCount = _cinema.BookedSitsCount;
         _cinema.CnacelBook(3);
         Assert.Equal(1u, initialCount - _cinema.BookedSitsCount);

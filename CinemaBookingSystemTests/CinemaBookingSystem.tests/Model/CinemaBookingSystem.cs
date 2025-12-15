@@ -27,6 +27,6 @@ public class CinemaBookingSystem
 
     public void CnacelBook(uint sitNumber) 
     {
-        
+        _bookedSits.Remove(sitNumber);
     }
 }
