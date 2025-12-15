@@ -45,4 +45,16 @@ public class CinemaBookingSystemTests
     {
         Assert.Throws<InvalidOperationException>(() => _cinema.CancelBooking(5));
     }
+
+    [Fact]
+    public void CinemaContainsSit_ExcedesNumberOfSits_False() 
+    {
+        Assert.False(_cinema.CinemaContainsSit(51));
+    }
+
+    [Fact]
+    public void CinemaContainsSit_SitNumber_True()
+    {
+        Assert.True(_cinema.CinemaContainsSit(1));
+    }
 }
