@@ -17,6 +17,8 @@ public class CinemaBookingSystem
 
     public void BookSit(uint sitNumber) 
     {
+        if (_bookedSits.Contains(sitNumber))
+            throw new InvalidOperationException($"Sit {sitNumber} is already booked");
         _bookedSits.Add(sitNumber);
     }
 
