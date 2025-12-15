@@ -49,6 +49,17 @@ public class CinemaBookingSystemTests
     [Fact]
     public void BookSit_BookingMoreSists_ThrowsInvalidOperation()
     {
+        for (uint i = 0; i < 51; i++) 
+        {
+            try 
+            {
+                _cinema.BookSit(i);
+            }
+            catch (InvalidOperationException) 
+            {
+                continue;
+            }
+        }
         Assert.Throws<InvalidOperationException>(() => _cinema.BookSit(51));
     }
 }
