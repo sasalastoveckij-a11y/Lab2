@@ -47,14 +47,8 @@ public class CinemaBookingSystemTests
     }
 
     [Fact]
-    public void CinemaContainsSit_ExcedesNumberOfSits_False() 
+    public void BookSit_BookingMoreSists_ThrowsInvalidOperation()
     {
-        Assert.False(_cinema.CinemaContainsSit(51));
-    }
-
-    [Fact]
-    public void CinemaContainsSit_SitNumber_True()
-    {
-        Assert.True(_cinema.CinemaContainsSit(1));
+        Assert.Throws<InvalidOperationException>(() => _cinema.BookSit(51));
     }
 }

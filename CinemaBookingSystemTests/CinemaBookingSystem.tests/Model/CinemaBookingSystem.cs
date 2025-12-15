@@ -18,7 +18,7 @@ public class CinemaBookingSystem
 
     public void BookSit(uint sitNumber) 
     {
-        if (SitIsBooked(sitNumber))
+        if (SitIsBooked(sitNumber) || SitCount == _bookedSits.Count)
             throw new InvalidOperationException($"Sit {sitNumber} is already booked");
         _bookedSits.Add(sitNumber);
     }
@@ -31,6 +31,4 @@ public class CinemaBookingSystem
             throw new InvalidOperationException($"Sit {sitNumber} is not booked");
         _bookedSits.Remove(sitNumber);
     }
-
-    public bool CinemaContainsSit(uint sitNumber) => false;
 }
