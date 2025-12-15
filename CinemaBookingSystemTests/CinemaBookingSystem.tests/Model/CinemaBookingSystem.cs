@@ -24,4 +24,9 @@ public class CinemaBookingSystem
     }
 
     public bool SitIsBooked(uint sitNumber) => _bookedSits.Contains(sitNumber);
+
+    public void CnacelBook(uint sitNumber) 
+    {
+        
+    }
 }

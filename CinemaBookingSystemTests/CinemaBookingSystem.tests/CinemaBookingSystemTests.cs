@@ -7,7 +7,7 @@ public class CinemaBookingSystemTests
     private CinemaBookingSystem _cinema = new(50); 
 
     [Fact]
-    public void BookSit_BookingSit_IcreasesBookedSitsCount()
+    public void BookSit_BookingSit_IncreasesBookedSitsCount()
     {
         var initialCount = _cinema.BookedSitsCount;
         _cinema.BookSit(1);
@@ -30,5 +30,12 @@ public class CinemaBookingSystemTests
         _cinema.BookSit(2);
         Assert.True(_cinema.SitIsBooked(2));
     }
-    
+
+    [Fact]
+    public void CnacelBook_BookedSit_DecreasesBookedSitsCount()
+    {
+        var initialCount = _cinema.BookedSitsCount;
+        _cinema.CnacelBook(3);
+        Assert.Equal(1u, initialCount - _cinema.BookedSitsCount);
+    }
 }
