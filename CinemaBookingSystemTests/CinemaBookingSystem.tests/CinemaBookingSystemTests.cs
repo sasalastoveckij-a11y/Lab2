@@ -1,11 +1,16 @@
-﻿namespace CinemaBookingSystem.tests
-{
-    public class CinemaBookingSystemTests
-    {
-        [Fact]
-        public void Test1()
-        {
+﻿using CinemaBookingSystemTests.Model;
 
-        }
+namespace CinemaBookingSystemTests;
+
+public class CinemaBookingSystemTests
+{
+    private CinemaBookingSystem _cinema = new(50); 
+
+    [Fact]
+    public void BookSit_BookingSit_IcreasesBookedSitsCount()
+    {
+        var initialCount = _cinema.BookedSitsCount;
+        _cinema.BookSit(1);
+        Assert.Equal(1u, _cinema.BookedSitsCount - initialCount);
     }
 }

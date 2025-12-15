@@ -1,11 +1,24 @@
-﻿namespace CinemaBookingSystem.tests.Model;
+﻿namespace CinemaBookingSystemTests.Model;
 
 public class CinemaBookingSystem
 {
-    public int SitCount { get; set; }
-    public int BookedSitsCount { get; set; }
+    public CinemaBookingSystem(uint sitCount)
+    {
+        SitCount = sitCount;
+    }
 
-    public void BookSit(int sitNumber) { }
+    private List<uint> _bookedSits = new();
 
-    public bool SitIsBooked(int sitNumber) => false;
+    public uint SitCount { get; private init; }
+    public uint BookedSitsCount 
+    { 
+        get => (uint)_bookedSits.Count(); 
+    }
+
+    public void BookSit(uint sitNumber) 
+    {
+        _bookedSits.Add(sitNumber);
+    }
+
+    public bool SitIsBooked(uint sitNumber) => false;
 }
