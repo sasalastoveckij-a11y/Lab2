@@ -32,11 +32,17 @@ public class CinemaBookingSystemTests
     }
 
     [Fact]
-    public void CnacelBook_BookedSit_DecreasesBookedSitsCount()
+    public void CancelBook_BookedSit_DecreasesBookedSitsCount()
     {
         _cinema.BookSit(3);
         var initialCount = _cinema.BookedSitsCount;
         _cinema.CnacelBook(3);
         Assert.Equal(1u, initialCount - _cinema.BookedSitsCount);
+    }
+
+    [Fact]
+    public void CancelBook_NotBookedSit_ThrowsInvalidOperation()
+    {
+        Assert.Throws<InvalidOperationException>(() => _cinema.CancelBook(5));
     }
 }

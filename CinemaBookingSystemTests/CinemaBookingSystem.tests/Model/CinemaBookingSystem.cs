@@ -25,7 +25,7 @@ public class CinemaBookingSystem
 
     public bool SitIsBooked(uint sitNumber) => _bookedSits.Contains(sitNumber);
 
-    public void CnacelBook(uint sitNumber) 
+    public void CancelBook(uint sitNumber) 
     {
         _bookedSits.Remove(sitNumber);
     }
