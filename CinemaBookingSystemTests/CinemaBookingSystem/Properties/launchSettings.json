@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CinemaBookingSystem": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
