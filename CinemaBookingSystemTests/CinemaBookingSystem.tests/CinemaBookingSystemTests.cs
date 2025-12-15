@@ -13,4 +13,14 @@ public class CinemaBookingSystemTests
         _cinema.BookSit(1);
         Assert.Equal(1u, _cinema.BookedSitsCount - initialCount);
     }
+
+    [Fact]
+    public void BookSit_BookingBookedSit_ThrowsInvalidOpertaion()
+    {
+        Assert.Throws<InvalidOperationException>(() =>
+        {
+            _cinema.BookSit(1);
+            _cinema.BookSit(1);
+        });
+    }
 }
