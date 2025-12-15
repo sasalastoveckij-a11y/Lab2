@@ -36,7 +36,7 @@ public class CinemaBookingSystemTests
     {
         _cinema.BookSit(3);
         var initialCount = _cinema.BookedSitsCount;
-        _cinema.CnacelBook(3);
+        _cinema.CancelBook(3);
         Assert.Equal(1u, initialCount - _cinema.BookedSitsCount);
     }
 
