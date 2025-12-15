@@ -10,6 +10,7 @@ public class CinemaBookingSystem
     private List<uint> _bookedSits = new();
 
     public uint SitCount { get; private init; }
+
     public uint BookedSitsCount 
     { 
         get => (uint)_bookedSits.Count(); 
@@ -22,5 +23,5 @@ public class CinemaBookingSystem
         _bookedSits.Add(sitNumber);
     }
 
-    public bool SitIsBooked(uint sitNumber) => false;
+    public bool SitIsBooked(uint sitNumber) => _bookedSits.Contains(sitNumber);
 }

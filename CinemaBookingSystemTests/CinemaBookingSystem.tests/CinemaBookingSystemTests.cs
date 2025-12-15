@@ -23,4 +23,12 @@ public class CinemaBookingSystemTests
             _cinema.BookSit(1);
         });
     }
+
+    [Fact]
+    public void SitIsBooked_BookedSitNumber_True() 
+    {
+        _cinema.BookSit(2);
+        Assert.True(_cinema.SitIsBooked(2));
+    }
+    
 }
